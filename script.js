@@ -3,7 +3,7 @@ let name = document.getElementById("name")
 let year = document.getElementById("year")
 let head= document.getElementById("url")
 let urlString="https://localhost:8080/"
-head.innerText= urlString
+
 
 function headChange() {
 	head.innerText="";
