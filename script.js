@@ -8,7 +8,7 @@ let urlString="https://localhost:8080/"
 function headChange() {
 	head.innerText="";
 	let tempUrl = urlString
-	if(name.value && year.value){
+	if(name.value!==null && year.value!==null){
 		tempUrl= `${urlString}?name=${name.value}&year=${year.value}`
 	}
 	else if(name.value){
