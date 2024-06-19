@@ -1,21 +1,22 @@
-// your code here
-let name = document.getElementById("name")
-let year = document.getElementById("year")
-let head= document.getElementById("url")
-let urlString="https://localhost:8080/"
-
+let nameInput = document.getElementById("name");
+let yearInput = document.getElementById("year");
+let head = document.getElementById("url");
+let urlString = "https://localhost:8080/";
 
 function headChange() {
-	head.innerText="";
-	let tempUrl = urlString
-	if(name.value!==null && year.value!==null){
-		tempUrl= `${urlString}?name=${name.value}&year=${year.value}`
-	}
-	else if(name.value){
-		tempUrl+="?name="+name.value
-	}
-	else if (year.value){
-		tempUrl+="?year="+year.value
-	}
-	head.innerText= tempUrl
+    let tempUrl = urlString;
+    let params = new URLSearchParams();
+
+    if (nameInput.value) {
+        params.append("name", nameInput.value);
+    }
+    if (yearInput.value) {
+        params.append("year", yearInput.value);
+    }
+
+    if (params.toString()) {
+        tempUrl += "?" + params.toString();
+    }
+
+    head.innerText = tempUrl;
 }
